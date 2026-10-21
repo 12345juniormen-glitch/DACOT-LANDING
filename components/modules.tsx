@@ -24,7 +24,7 @@ export function Modules() {
           </div>
           <div className="lg:col-span-5 lg:pb-2" data-reveal>
             <p className="max-w-[38ch] text-[15.5px] leading-[1.7] text-muted">
-              Comece com Pedidos & Operação. Estoque & Compras e Análise & Decisão estão em desenvolvimento.
+              Pedidos, estoque e decisões conectados. Escolha os módulos que fazem sentido para a sua operação.
             </p>
           </div>
         </div>
