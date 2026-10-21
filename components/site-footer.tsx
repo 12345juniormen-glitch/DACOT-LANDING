@@ -5,10 +5,10 @@ const columns = [
   {
     title: "Plataforma",
     links: [
-      ["O método", "#plataforma"],
+      ["Plataforma", "#plataforma"],
       ["Módulos", "#modulos"],
       ["Monte a sua", "#montar"],
-      ["Diferencial", "#diferenca"],
+      ["Como funciona", "#como-funciona"],
     ],
   },
   {
@@ -36,10 +36,10 @@ export function SiteFooter() {
               decisão — em módulos independentes.
             </p>
             <a
-              href="mailto:contato@dacot.com.br"
+              href="#contato"
               className="mt-6 inline-flex items-center gap-2 border-b border-line pb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted transition-colors hover:border-copper/60 hover:text-fg"
             >
-              contato@dacot.com.br
+              Falar no WhatsApp
             </a>
           </div>
 
@@ -79,7 +79,7 @@ export function SiteFooter() {
                 </li>
                 <li>
                   <a
-                    href="mailto:contato@dacot.com.br"
+                    href="#contato"
                     className="text-[13px] text-muted transition-colors hover:text-fg"
                   >
                     Falar com o time

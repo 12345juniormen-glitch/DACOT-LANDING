@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import { SectionLabel } from "@/components/section-label";
 import { cn } from "@/lib/utils";
 
-type ModuleId = "pedidos" | "estoque" | "analise";
+import type { ModuleId } from "@/lib/contact-mailto";
+import { useDemoConfiguration } from "@/components/demo-configuration";
 
 const modules: {
   id: ModuleId;
@@ -17,44 +18,38 @@ const modules: {
     id: "pedidos",
     index: "01",
     name: "Pedidos & Operação",
-    short: "A fila inteira em um só lugar, do pedido ao fechamento.",
+    short: "Disponível agora.",
     covers: "Operação",
   },
   {
     id: "estoque",
     index: "02",
     name: "Estoque & Compras",
-    short: "O custo real de cada prato e o que está prestes a faltar.",
+    short: "Em desenvolvimento.",
     covers: "Custo",
   },
   {
     id: "analise",
     index: "03",
     name: "Análise & Decisão",
-    short: "O que os números querem dizer — e o que fazer com eles.",
+    short: "Em desenvolvimento.",
     covers: "Decisão",
   },
 ];
 
 const messages: Record<string, string> = {
-  none: "Nenhum módulo selecionado. Comece pelo que mais dói hoje: operação, custo ou decisão.",
-  pedidos:
-    "Você passa a enxergar o turno inteiro. Nenhum pedido perdido, nenhum repasse sem conferência.",
-  estoque:
-    "Você passa a enxergar o custo real do prato e o que está prestes a faltar.",
-  analise:
-    "Você passa a enxergar margem, canal e prioridade. Menos relatório, mais decisão.",
-  "pedidos,estoque":
-    "Ficha técnica cruzada com a venda: baixa automática, compra calculada e menos desperdício.",
-  "pedidos,analise":
-    "Cada pedido vira dado de margem, canal e horário — e volta como recomendação.",
-  "estoque,analise":
-    "CMV real por prato, com recomendação de compra e de preço no mesmo lugar.",
-  "pedidos,estoque,analise":
-    "Operação completa: do pedido ao prato, do estoque à decisão. O ciclo inteiro sob controle.",
+  none: "Selecione os módulos de interesse.",
+  pedidos: "Conheça o DACOT Pedidos, disponível agora.",
+  estoque: "Estoque & Compras está em desenvolvimento.",
+  analise: "Análise & Decisão está em desenvolvimento.",
+  "pedidos,estoque": "Pedidos disponível agora. Estoque & Compras em desenvolvimento.",
+  "pedidos,analise": "Pedidos disponível agora. Análise & Decisão em desenvolvimento.",
+  "estoque,analise": "Os dois módulos estão em desenvolvimento.",
+  "pedidos,estoque,analise": "Pedidos disponível agora. Os próximos módulos estão em desenvolvimento.",
 };
 
 export function Configurator() {
+  const { setSelected: setDemoSelected } = useDemoConfiguration();
   const [selected, setSelected] = useState<Record<ModuleId, boolean>>({
     pedidos: true,
     estoque: false,
@@ -91,7 +86,7 @@ export function Configurator() {
       <div className="relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7" data-reveal>
-            <SectionLabel index="04">Configuração</SectionLabel>
+            <SectionLabel index="03">Configuração</SectionLabel>
             <h2 className="section-title mt-7 text-fg">
               Monte a DACOT
               <br />
@@ -102,8 +97,7 @@ export function Configurator() {
           </div>
           <div className="lg:col-span-5 lg:pb-2" data-reveal>
             <p className="max-w-[38ch] text-[15.5px] leading-[1.7] text-muted">
-              Comece por um módulo. Inclua outro quando fizer sentido. Sem
-              pacote fechado, sem pagar pelo que você não usa.
+              Escolha o que faz sentido para a sua operação. Os módulos futuros indicam seu interesse.
             </p>
           </div>
         </div>
@@ -185,10 +179,6 @@ export function Configurator() {
               })}
             </div>
 
-            <p className="mt-5 flex items-center gap-2.5 font-mono text-[9px] uppercase tracking-[0.13em] text-faint">
-              <span className="size-1 bg-copper/70" aria-hidden="true" />
-              Nenhum módulo exige os outros para funcionar
-            </p>
           </div>
 
           <div className="lg:col-span-5">
@@ -247,7 +237,7 @@ export function Configurator() {
                   <div className="mt-6">
                     <div className="flex items-baseline justify-between">
                       <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
-                        Cobertura do ciclo
+                        Módulos selecionados
                       </span>
                       <span className="font-mono text-[10px] text-fg/80">
                         {coverage}%
@@ -276,7 +266,8 @@ export function Configurator() {
 
                 <div className="border-t border-line px-5 py-5">
                   <a
-                    href="#contato"
+                    href="#solicitar-demo"
+                    onClick={() => setDemoSelected([...activeIds])}
                     className="group flex h-12 w-full items-center justify-between bg-copper px-5 font-mono text-[10.5px] uppercase tracking-[0.15em] text-ink transition-colors hover:bg-copper-soft"
                   >
                     Levar essa configuração

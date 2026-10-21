@@ -1,22 +1,25 @@
 export const CONTACT_EMAIL = "contato@dacot.com.br";
 
-export const PRIORITIES = [
-  { value: "operacao", label: "Pedidos e operação" },
-  { value: "estoque", label: "Estoque e custo" },
-  { value: "analise", label: "Análise e decisão" },
-  { value: "tudo", label: "Os três — quero entender o conjunto" },
+export const MODULE_OPTIONS = [
+  { id: "pedidos", label: "Pedidos & Operação" },
+  { id: "estoque", label: "Estoque & Compras" },
+  { id: "analise", label: "Análise & Decisão" },
 ] as const;
+
+export type ModuleId = (typeof MODULE_OPTIONS)[number]["id"];
+
+export function moduleSummary(ids: ModuleId[]) {
+  const selected = MODULE_OPTIONS.filter((item) => ids.includes(item.id));
+  if (selected.length === 3) return "Os três — quero entender o conjunto";
+  return selected.map((item) => item.label).join(" + ");
+}
 
 export type DemoRequest = {
   nome: string;
   restaurante: string;
   whatsapp: string;
-  prioridade: string;
+  modules: ModuleId[];
 };
-
-function priorityLabel(value: string) {
-  return PRIORITIES.find((item) => item.value === value)?.label ?? value;
-}
 
 export function buildDemoMailto(request: DemoRequest) {
   const subject = `Demo DACOT — ${request.restaurante}`;
@@ -24,7 +27,7 @@ export function buildDemoMailto(request: DemoRequest) {
     `Nome: ${request.nome}`,
     `Restaurante: ${request.restaurante}`,
     `WhatsApp: ${request.whatsapp}`,
-    `Prioridade: ${priorityLabel(request.prioridade)}`,
+    `Prioridade: ${moduleSummary(request.modules)}`,
     "",
     "Quero entender qual configuração da DACOT faz sentido para a minha operação.",
   ].join("\n");

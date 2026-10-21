@@ -10,7 +10,7 @@ const navItems = [
   { label: "Plataforma", href: "#plataforma" },
   { label: "Módulos", href: "#modulos" },
   { label: "Monte a sua", href: "#montar" },
-  { label: "Diferencial", href: "#diferenca" },
+  { label: "Como funciona", href: "#como-funciona" },
 ];
 
 export function SiteHeader() {
@@ -171,10 +171,10 @@ export function SiteHeader() {
             <Arrow />
           </ButtonLink>
           <a
-            href="mailto:contato@dacot.com.br"
+            href="#contato"
             className="mt-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted"
           >
-            contato@dacot.com.br
+            Falar no WhatsApp
           </a>
         </div>
 
