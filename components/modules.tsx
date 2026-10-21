@@ -9,7 +9,7 @@ const modules = [
 
 export function Modules() {
   return (
-    <section id="modulos" className="relative border-t border-line bg-ink">
+    <section id="modulos" className="relative border-t border-line">
       <div className="mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7" data-reveal>

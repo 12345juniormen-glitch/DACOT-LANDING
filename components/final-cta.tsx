@@ -14,7 +14,7 @@ export function FinalCta() {
           <div className="lg:col-span-7 lg:pr-10" data-reveal>
             <SectionLabel index="04">Próximo passo</SectionLabel>
             <h2 className="mt-8 font-display text-[clamp(2.4rem,5.2vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.045em] text-fg">
-              Conheça o<br /><span className="text-copper-soft">DACOT Pedidos.</span>
+              Conheça o<br /><span className="text-copper-soft">DACOT</span>
             </h2>
             <p className="mt-8 max-w-[44ch] text-[15.5px] leading-[1.7] text-muted md:text-[16.5px]">
               Fale com a gente pelo WhatsApp e veja como o DACOT Pedidos pode funcionar no seu restaurante.

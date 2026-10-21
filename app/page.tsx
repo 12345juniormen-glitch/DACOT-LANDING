@@ -1,3 +1,5 @@
+import { HeroParallax } from "@/components/hero-parallax";
+import { screenshots } from "@/lib/hero-screenshots";
 import { DemoConfiguration } from "@/components/demo-configuration";
 import { Configurator } from "@/components/configurator";
 import { FinalCta } from "@/components/final-cta";
@@ -37,14 +39,16 @@ export default function Home() {
       <MotionRoot />
 
       <main id="conteudo">
+        <HeroParallax screenshots={screenshots}>
         <Hero />
-        <section id="plataforma" className="border-t border-line bg-ink">
+        <section id="plataforma" className="border-t border-line">
           <div className="mx-auto grid max-w-[1440px] gap-8 px-5 py-24 md:px-10 md:py-32 lg:grid-cols-12">
             <h2 className="section-title lg:col-span-7">A DACOT cresce<br /><span className="text-muted">com a sua operação.</span></h2>
             <p className="max-w-[40ch] text-[16.5px] leading-[1.7] text-muted lg:col-span-5">Uma plataforma modular para restaurantes. Comece com o que precisa e adicione novos módulos conforme o negócio cresce.</p>
           </div>
         </section>
         <Modules />
+        </HeroParallax>
         <Method />
         <DemoConfiguration>
           <Configurator />
