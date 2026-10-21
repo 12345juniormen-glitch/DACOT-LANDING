@@ -1,32 +1,30 @@
 import { ButtonLink } from "@/components/ui/button";
+import { HeroParallax, type ProductScreenshot } from "@/components/hero-parallax";
+
+const screenshots: ProductScreenshot[] = [
+  { src: "/hero-parallax/01-login.png", label: "Login", alt: "Login do DACOT Pedidos" },
+  { src: "/hero-parallax/02-dashboard.png", label: "Dashboard", alt: "Dashboard operacional do DACOT Pedidos" },
+  { src: "/hero-parallax/03-pedidos.png", label: "Pedidos", alt: "Acompanhamento operacional de pedidos" },
+  { src: "/hero-parallax/04-pedido-detalhes.png", label: "Detalhes", alt: "Detalhes completos de um pedido" },
+  { src: "/hero-parallax/05-criar-pedido.png", label: "Novo pedido", alt: "Criação de pedido no DACOT" },
+  { src: "/hero-parallax/06-kds.png", label: "Cozinha", alt: "KDS da cozinha com pedidos em produção" },
+  { src: "/hero-parallax/07-produtos.png", label: "Produtos", alt: "Catálogo de produtos do restaurante" },
+  { src: "/hero-parallax/08-clientes.png", label: "Clientes", alt: "Cadastro de clientes do DACOT" },
+  { src: "/hero-parallax/09-cliente-detalhes.png", label: "Cliente", alt: "Histórico de pedidos de uma cliente" },
+  { src: "/hero-parallax/10-historico.png", label: "Histórico", alt: "Histórico completo de pedidos" },
+  { src: "/hero-parallax/11-auditoria.png", label: "Auditoria", alt: "Linha do tempo auditável de um pedido" },
+  { src: "/hero-parallax/12-whatsapp-lista.png", label: "WhatsApp", alt: "Caixa de entrada do WhatsApp integrada" },
+  { src: "/hero-parallax/13-whatsapp-conversa.png", label: "Atendimento", alt: "Conversa real de atendimento no WhatsApp" },
+  { src: "/hero-parallax/14-usuarios.png", label: "Equipe", alt: "Gestão da equipe e permissões" },
+  { src: "/hero-parallax/15-mobile.png", label: "Mobile", alt: "KDS do DACOT em uma tela mobile", mobile: true },
+];
 
 export function Hero() {
   return (
-    <section id="topo" className="grain relative flex min-h-[100svh] flex-col overflow-hidden bg-ink">
-      {/* atmosphere */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(65%_55%_at_76%_18%,rgba(185,124,79,0.16),transparent_72%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="blueprint pointer-events-none absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-1/2 z-0 hidden w-px bg-line lg:block"
-      />
-
-      <div className="relative z-10 mx-auto grid w-full max-w-[1440px] flex-1 grid-cols-1 items-center gap-14 px-5 pb-10 pt-[108px] md:px-10 lg:grid-cols-12 lg:gap-6 lg:pb-12 lg:pt-[112px]">
-        <div className="lg:col-span-12">
+    <HeroParallax screenshots={screenshots}>
           <div className="flex items-center gap-3">
             <span className="pulse-dot size-1.5 shrink-0 bg-copper" aria-hidden="true" />
-            <p className="eyebrow text-muted">
-              <span className="md:hidden">Plataforma modular</span>
-              <span className="hidden md:inline">
-                Plataforma modular para restaurantes
-              </span>
-            </p>
+            <p className="eyebrow text-muted">Plataforma modular para restaurantes</p>
           </div>
 
           <h1 className="display-xl mt-7 text-fg md:mt-9">
@@ -62,9 +60,6 @@ export function Hero() {
               </svg>
             </a>
           </div>
-
-        </div>
-      </div>
-    </section>
+    </HeroParallax>
   );
 }
