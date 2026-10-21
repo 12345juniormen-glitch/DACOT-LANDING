@@ -18,34 +18,34 @@ const modules: {
     id: "pedidos",
     index: "01",
     name: "Pedidos & Operação",
-    short: "Disponível agora.",
+    short: "Pedidos, preparo e entrega em um fluxo claro.",
     covers: "Operação",
   },
   {
     id: "estoque",
     index: "02",
     name: "Estoque & Compras",
-    short: "Em desenvolvimento.",
+    short: "Controle de insumos e planejamento de compras.",
     covers: "Custo",
   },
   {
     id: "analise",
     index: "03",
     name: "Análise & Decisão",
-    short: "Em desenvolvimento.",
+    short: "Dados para orientar as decisões da operação.",
     covers: "Decisão",
   },
 ];
 
 const messages: Record<string, string> = {
-  none: "Selecione os módulos de interesse.",
-  pedidos: "Conheça o DACOT Pedidos, disponível agora.",
-  estoque: "Estoque & Compras está em desenvolvimento.",
-  analise: "Análise & Decisão está em desenvolvimento.",
-  "pedidos,estoque": "Pedidos disponível agora. Estoque & Compras em desenvolvimento.",
-  "pedidos,analise": "Pedidos disponível agora. Análise & Decisão em desenvolvimento.",
-  "estoque,analise": "Os dois módulos estão em desenvolvimento.",
-  "pedidos,estoque,analise": "Pedidos disponível agora. Os próximos módulos estão em desenvolvimento.",
+  none: "Selecione os módulos que fazem sentido para a sua operação.",
+  pedidos: "Sua configuração reúne pedidos, preparo e entrega.",
+  estoque: "Sua configuração prioriza insumos e compras.",
+  analise: "Sua configuração prioriza a leitura dos dados e as decisões.",
+  "pedidos,estoque": "Sua configuração conecta a operação ao controle de insumos e compras.",
+  "pedidos,analise": "Sua configuração conecta os pedidos à análise da operação.",
+  "estoque,analise": "Sua configuração reúne controle de insumos e análise para decidir.",
+  "pedidos,estoque,analise": "Sua configuração reúne operação, estoque e decisão em uma plataforma modular.",
 };
 
 export function Configurator() {
@@ -97,7 +97,7 @@ export function Configurator() {
           </div>
           <div className="lg:col-span-5 lg:pb-2" data-reveal>
             <p className="max-w-[38ch] text-[15.5px] leading-[1.7] text-muted">
-              Escolha o que faz sentido para a sua operação. Os módulos futuros indicam seu interesse.
+              Escolha os módulos que fazem sentido para a sua operação e combine conforme a sua necessidade.
             </p>
           </div>
         </div>

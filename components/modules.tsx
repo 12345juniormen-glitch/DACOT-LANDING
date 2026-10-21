@@ -2,9 +2,9 @@ import Link from "next/link";
 import { SectionLabel } from "@/components/section-label";
 
 const modules = [
-  { index: "01", title: "Pedidos & Operação", tag: "Disponível agora", problem: "Organize os pedidos e acompanhe o fluxo de preparo e entrega." },
-  { index: "02", title: "Estoque & Compras", tag: "Em desenvolvimento", problem: "O próximo passo para o controle de insumos e compras." },
-  { index: "03", title: "Análise & Decisão", tag: "Em desenvolvimento", problem: "Uma visão dos dados para apoiar as próximas decisões." },
+  { index: "01", title: "Pedidos & Operação", tag: "Operação", problem: "Organize os pedidos e acompanhe o fluxo de preparo e entrega." },
+  { index: "02", title: "Estoque & Compras", tag: "Insumos e compras", problem: "Controle de insumos e planejamento de compras." },
+  { index: "03", title: "Análise & Decisão", tag: "Dados e decisão", problem: "Uma visão dos dados para apoiar as próximas decisões." },
 ];
 
 export function Modules() {
