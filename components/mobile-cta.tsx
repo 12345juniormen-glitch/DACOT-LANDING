@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ContactTrigger } from "@/components/contact-modal";
 import { cn } from "@/lib/utils";
 
 export function MobileCta() {
@@ -40,15 +41,7 @@ export function MobileCta() {
           </p>
           <p className="mt-1 text-[11.5px] text-muted">Com os seus números</p>
         </div>
-        <a
-          href="#contato"
-          className="flex h-11 items-center gap-3 bg-copper px-5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink"
-        >
-          Agendar
-          <svg viewBox="0 0 16 16" className="size-3.5" fill="none" aria-hidden="true">
-            <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-          </svg>
-        </a>
+        <ContactTrigger primary className="!min-h-11 !px-4 !text-[10px]">Agendar</ContactTrigger>
       </div>
     </div>
   );

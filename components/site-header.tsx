@@ -1,9 +1,11 @@
 "use client";
 
+import { SocialContactLink } from "@/components/social-contact-link";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BrandMark, Wordmark } from "@/components/brand";
-import { ButtonLink } from "@/components/ui/button";
+import { ContactTrigger } from "@/components/contact-modal";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -97,10 +99,9 @@ export function SiteHeader() {
 
           <div className="relative z-10 flex items-center gap-4">
             <div className="hidden md:block">
-              <ButtonLink href="#contato" variant="outline" size="sm">
+              <ContactTrigger data-guide-header primary className="!min-h-10 !py-1 !text-[10px]" onClick={() => setOpen(false)}>
                 Agendar demo
-                <Arrow />
-              </ButtonLink>
+              </ContactTrigger>
             </div>
 
             <button
@@ -161,21 +162,19 @@ export function SiteHeader() {
         </nav>
 
         <div className="mt-8 flex flex-col gap-3">
-          <ButtonLink
-            href="#contato"
-            size="lg"
+          <ContactTrigger
+            primary
             className="w-full justify-between"
             onClick={() => setOpen(false)}
           >
             Agendar uma demo
-            <Arrow />
-          </ButtonLink>
-          <a
-            href="#contato"
+          </ContactTrigger>
+          <SocialContactLink channel="whatsapp"
+            onClick={() => setOpen(false)}
             className="mt-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted"
           >
             Falar no WhatsApp
-          </a>
+          </SocialContactLink>
         </div>
 
         <p className="mt-auto max-w-[280px] text-[13px] leading-relaxed text-faint">
@@ -184,18 +183,5 @@ export function SiteHeader() {
         </p>
       </div>
     </>
-  );
-}
-
-function Arrow() {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      fill="none"
-      aria-hidden="true"
-      className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
-    >
-      <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-    </svg>
   );
 }

@@ -1,3 +1,5 @@
+import { SocialContactLink } from "@/components/social-contact-link";
+import { ContactTrigger } from "@/components/contact-modal";
 import Link from "next/link";
 import { BrandMark, Wordmark } from "@/components/brand";
 
@@ -35,12 +37,11 @@ export function SiteFooter() {
               Plataforma de otimização para restaurantes. Operação, estoque e
               decisão — em módulos independentes.
             </p>
-            <a
-              href="#contato"
+            <SocialContactLink channel="whatsapp"
               className="mt-6 inline-flex items-center gap-2 border-b border-line pb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted transition-colors hover:border-copper/60 hover:text-fg"
             >
               Falar no WhatsApp
-            </a>
+            </SocialContactLink>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-3 lg:col-span-7">
@@ -70,20 +71,18 @@ export function SiteFooter() {
               </p>
               <ul className="mt-4 space-y-2.5">
                 <li>
-                  <Link
-                    href="#contato"
+                  <ContactTrigger
                     className="text-[13px] text-muted transition-colors hover:text-fg"
                   >
                     Agendar uma demo
-                  </Link>
+                  </ContactTrigger>
                 </li>
                 <li>
-                  <a
-                    href="#contato"
+                  <ContactTrigger
                     className="text-[13px] text-muted transition-colors hover:text-fg"
                   >
                     Falar com o time
-                  </a>
+                  </ContactTrigger>
                 </li>
               </ul>
               <p className="mt-6 max-w-[20ch] text-[11.5px] leading-relaxed text-faint/80">

@@ -1,11 +1,7 @@
+import { SocialContactLink } from "@/components/social-contact-link";
 import { SectionLabel } from "@/components/section-label";
 
 export function FinalCta() {
-  const phone = process.env.NEXT_PUBLIC_DACOT_WHATSAPP?.replace(/\D/g, "");
-  const whatsappUrl = phone
-    ? `https://wa.me/${phone}`
-    : undefined;
-
   return (
     <section id="contato" className="relative overflow-hidden border-t border-line bg-ink-soft">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_20%_30%,rgba(185,124,79,0.12),transparent_70%)]" />
@@ -22,25 +18,12 @@ export function FinalCta() {
           </div>
           <div id="solicitar-demo" className="scroll-mt-28 lg:col-span-5" data-reveal>
             <div className="w-full max-w-[320px] border-t border-line lg:ml-auto">
-              {whatsappUrl ? (
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                  className="group flex min-h-20 items-center gap-5 border-b border-line py-5 text-fg transition-colors hover:border-copper/50 hover:text-copper-soft">
-                  <WhatsAppIcon />
-                  <span className="text-[14px] tracking-[-0.01em]">WhatsApp</span>
-                  <ContactArrow />
-                </a>
-              ) : (
-                <div aria-disabled="true" className="flex min-h-20 items-center gap-5 border-b border-line py-5 text-muted">
-                  <WhatsAppIcon />
-                  <div>
-                    <span className="block text-[14px] tracking-[-0.01em]">WhatsApp</span>
-                    <span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.14em] text-faint">Em breve</span>
-                  </div>
-                </div>
-              )}
-              <a href="https://www.instagram.com/dacot.odn/" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram da DACOT: @dacot.odn (abre em nova aba)"
-                className="group flex min-h-20 items-center gap-5 border-b border-line py-5 text-fg transition-colors hover:border-copper/50 hover:text-copper-soft">
+              <SocialContactLink channel="whatsapp" className="group flex min-h-20 w-full items-center gap-5 border-b border-line py-5 text-left text-fg transition-colors hover:border-copper/50 hover:text-copper-soft">
+                <WhatsAppIcon /><span className="text-[14px] tracking-[-0.01em]">WhatsApp</span><ContactArrow />
+              </SocialContactLink>
+              <SocialContactLink channel="instagram"
+                aria-label="Entrar em contato com a DACOT pelo Instagram"
+                className="group flex min-h-20 w-full items-center gap-5 border-b border-line py-5 text-fg transition-colors hover:border-copper/50 hover:text-copper-soft">
                 <svg viewBox="0 0 24 24" className="size-6 shrink-0 text-copper" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="12" cy="12" r="4" />
@@ -48,7 +31,7 @@ export function FinalCta() {
                 </svg>
                 <span className="text-[14px] tracking-[-0.01em]">@dacot.odn</span>
                 <ContactArrow />
-              </a>
+              </SocialContactLink>
             </div>
           </div>
         </div>

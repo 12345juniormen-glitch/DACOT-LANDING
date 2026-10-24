@@ -5,7 +5,7 @@ import { SectionLabel } from "@/components/section-label";
 import { cn } from "@/lib/utils";
 
 import type { ModuleId } from "@/lib/contact-mailto";
-import { useDemoConfiguration } from "@/components/demo-configuration";
+import { ContactTrigger, ContactArrow } from "@/components/contact-modal";
 
 const modules: {
   id: ModuleId;
@@ -49,7 +49,6 @@ const messages: Record<string, string> = {
 };
 
 export function Configurator() {
-  const { setSelected: setDemoSelected } = useDemoConfiguration();
   const [selected, setSelected] = useState<Record<ModuleId, boolean>>({
     pedidos: true,
     estoque: false,
@@ -265,16 +264,9 @@ export function Configurator() {
                 </div>
 
                 <div className="border-t border-line px-5 py-5">
-                  <a
-                    href="#solicitar-demo"
-                    onClick={() => setDemoSelected([...activeIds])}
-                    className="group flex h-12 w-full items-center justify-between bg-copper px-5 font-mono text-[10.5px] uppercase tracking-[0.15em] text-ink transition-colors hover:bg-copper-soft"
-                  >
-                    Levar essa configuração
-                    <svg viewBox="0 0 16 16" className="size-3.5 transition-transform group-hover:translate-x-1" fill="none" aria-hidden="true">
-                      <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-                    </svg>
-                  </a>
+                  <ContactTrigger primary interest={activeIds.length === 1 && activeIds[0] !== "analise" ? activeIds[0] : "dacot"} className="w-full !text-[10.5px]">
+                    Levar essa configuração<ContactArrow />
+                  </ContactTrigger>
                   <p className="mt-3 text-center font-mono text-[8.5px] uppercase tracking-[0.12em] text-faint/80">
                     Você fala com quem implanta · sem compromisso
                   </p>

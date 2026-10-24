@@ -231,3 +231,34 @@
 .parallax-content :is(h1, h2, h3, p, a, li) {
   text-shadow: 0 1px 8px rgba(10, 9, 8, 0.95), 0 0 24px rgba(10, 9, 8, 0.8);
 }
+
+/* Shared contact actions; the rest of the site's tokens remain unchanged. */
+.contact-primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.25rem; min-height: 3.5rem; padding: .65rem .85rem .65rem 1.5rem; background: #C37B45; color: #0A0A09; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .14em; transition: background-color 160ms ease; cursor: pointer; }
+.contact-primary:hover { background: #DA9358; }
+.contact-arrow { position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: auto; width: 2rem; height: 2rem; overflow: hidden; border: 1.5px solid currentColor; border-radius: 50%; color: #0A0A09; }
+.contact-arrow svg { position: absolute; width: 16px; height: 16px; transition: transform 300ms cubic-bezier(.22,.61,.36,1); }
+.contact-arrow-out { transform: translateX(0); }
+.contact-arrow-in { transform: translateX(-32px); }
+.contact-primary:is(:hover, :focus-visible, :active) .contact-arrow-out { transform: translateX(32px); }
+.contact-primary:is(:hover, :focus-visible, :active) .contact-arrow-in { transform: translateX(0); }
+.dacot-contact { position: fixed; inset: 0; margin: auto; width: min(560px, calc(100% - 32px)); max-height: calc(100svh - 32px); padding: 0; overflow-y: auto; overscroll-behavior: contain; background: #0A0A09; color: #EEE9E1; border: 1px solid #26241F; border-radius: 2px; }
+.dacot-contact[open] { animation: contact-enter 160ms ease-out; }
+.dacot-contact::backdrop { background: rgb(0 0 0 / 78%); animation: contact-overlay 160ms ease-out; }
+.dacot-contact[data-closing="true"] { animation: contact-exit 160ms ease-in forwards; }
+.dacot-contact[data-closing="true"]::backdrop { animation: contact-overlay 160ms ease-in reverse forwards; }
+.contact-input { width: 100%; border: 0; border-bottom: 1px solid #26241F; border-radius: 0; padding: 10px 0; background: #0A0A09; color: #EEE9E1; font-size: 14px; }
+.contact-input:focus { outline: none; border-color: #C37B45; box-shadow: 0 1px #C37B45; }
+@keyframes contact-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes contact-exit { to { opacity: 0; transform: translateY(5px); } }
+@keyframes contact-overlay { from { background: transparent; } to { background: rgb(0 0 0 / 78%); } }
+@media (prefers-reduced-motion: reduce) { .dacot-contact[open], .dacot-contact[data-closing="true"], .dacot-contact::backdrop { animation: none; } .contact-arrow svg { transition: none; } .contact-primary:is(:hover, :focus-visible, :active) .contact-arrow-out { transform: translateX(0); } .contact-primary:is(:hover, :focus-visible, :active) .contact-arrow-in { transform: translateX(-32px); } }
+
+/* Viewport guide: outside parallax; its tip remains visible beside the header CTA. */
+.cta-cursor-guide { position: fixed; inset: 0; z-index: 60; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 240ms ease; }
+.cta-cursor-guide[data-visible="true"] { opacity: var(--guide-proximity, 1); }
+.cta-cursor-guide path { stroke: #C37B45; stroke-width: 1.4px; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.cta-cursor-guide .cta-guide-curve { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 260ms ease; }
+.cta-cursor-guide[data-visible="true"] .cta-guide-curve { stroke-dashoffset: 0; transition-duration: 1200ms; }
+.cta-cursor-guide .cta-guide-tip { opacity: 0; transition: opacity 180ms ease; }
+.cta-cursor-guide[data-visible="true"] .cta-guide-tip { opacity: 1; transition-delay: 700ms; }
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) { .cta-cursor-guide { display: none; } }

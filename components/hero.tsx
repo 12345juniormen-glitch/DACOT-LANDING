@@ -1,4 +1,5 @@
-import { ButtonLink } from "@/components/ui/button";
+import { CtaGuide } from "@/components/cta-guide";
+import { ContactTrigger } from "@/components/contact-modal";
 
 export function Hero() {
   return (
@@ -16,17 +17,11 @@ export function Hero() {
           </h1>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 md:mt-11">
-            <ButtonLink href="#contato" size="lg" className="justify-between sm:justify-center">
+            <CtaGuide>
+            <ContactTrigger data-guide-hero primary interest="pedidos" className="w-full justify-between sm:justify-center">
               Agendar uma demo
-              <svg
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden="true"
-                className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-              </svg>
-            </ButtonLink>
+            </ContactTrigger>
+            </CtaGuide>
 
             <a
               href="#como-funciona"

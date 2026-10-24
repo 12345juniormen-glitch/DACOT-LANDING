@@ -1,6 +1,6 @@
+import { ContactProvider } from "@/components/contact-modal";
 import { HeroParallax } from "@/components/hero-parallax";
 import { screenshots } from "@/lib/hero-screenshots";
-import { DemoConfiguration } from "@/components/demo-configuration";
 import { Configurator } from "@/components/configurator";
 import { FinalCta } from "@/components/final-cta";
 import { Hero } from "@/components/hero";
@@ -29,6 +29,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
+    <ContactProvider>
     <div className="min-h-screen bg-ink pb-[72px] md:pb-0">
       <script
         type="application/ld+json"
@@ -50,14 +51,13 @@ export default function Home() {
         <Modules />
         </HeroParallax>
         <Method />
-        <DemoConfiguration>
           <Configurator />
           <FinalCta />
-        </DemoConfiguration>
       </main>
 
       <SiteFooter />
       <MobileCta />
     </div>
+    </ContactProvider>
   );
 }
