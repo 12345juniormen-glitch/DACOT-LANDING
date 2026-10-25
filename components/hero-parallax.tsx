@@ -59,7 +59,7 @@ export function HeroParallax({ screenshots, children }: HeroParallaxProps) {
                   {row.map((screenshot, imageIndex) => (
                     <motion.figure key={screenshot.src} whileHover={{ y: -20 }}
                       className="group relative h-[190px] w-[250px] shrink-0 overflow-hidden border border-line-strong bg-surface md:h-96 md:w-[30rem]">
-                      <Image src={screenshot.src} alt={screenshot.alt} fill
+                      <Image data-parallax-image src={screenshot.src} alt={screenshot.alt} fill
                         priority={rowIndex === 0 && imageIndex < 2} quality={84}
                         sizes="(max-width: 767px) 250px, 480px"
                         className={screenshot.mobile ? "object-contain object-top" : "object-cover object-top"} />

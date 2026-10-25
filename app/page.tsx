@@ -1,3 +1,4 @@
+import { LandingPreloader } from "@/components/landing-preloader";
 import { ContactProvider } from "@/components/contact-modal";
 import { HeroParallax } from "@/components/hero-parallax";
 import { screenshots } from "@/lib/hero-screenshots";
@@ -29,6 +30,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
+    <LandingPreloader>
     <ContactProvider>
     <div className="min-h-screen bg-ink pb-[72px] md:pb-0">
       <script
@@ -59,5 +61,6 @@ export default function Home() {
       <MobileCta />
     </div>
     </ContactProvider>
+    </LandingPreloader>
   );
 }
