@@ -11,8 +11,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Plataforma", href: "#plataforma" },
   { label: "Módulos", href: "#modulos" },
-  { label: "Monte a sua", href: "#montar" },
   { label: "Como funciona", href: "#como-funciona" },
+  { label: "Monte a sua", href: "#montar" },
 ];
 
 export function SiteHeader() {
