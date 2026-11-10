@@ -97,12 +97,19 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="relative z-10 flex items-center gap-4">
+          <div className="relative z-10 flex items-center gap-2 sm:gap-4">
             <div className="hidden md:block">
               <ContactTrigger data-guide-header primary className="!min-h-10 !py-1 !text-[10px]" onClick={() => setOpen(false)}>
                 Agendar demo
               </ContactTrigger>
             </div>
+
+            <a
+              href="https://hub.dacot.com.br"
+              className="inline-flex min-h-10 shrink-0 items-center font-mono text-[10px] uppercase tracking-[0.08em] text-muted transition-colors hover:text-copper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
+            >
+              Já sou cliente
+            </a>
 
             <button
               type="button"
