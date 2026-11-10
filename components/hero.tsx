@@ -24,6 +24,13 @@ export function Hero() {
             </CtaGuide>
 
             <a
+              href="https://hub.dacot.com.br"
+              className="inline-flex h-14 items-center justify-center border border-line-strong bg-surface-2 px-6 font-mono text-[11px] uppercase tracking-[0.16em] text-fg transition-colors hover:border-fg/40 hover:bg-fg/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg"
+            >
+              Já sou cliente
+            </a>
+
+            <a
               href="#como-funciona"
               className="group inline-flex h-14 items-center gap-3 border-b border-line px-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted transition-colors hover:border-copper/60 hover:text-fg"
             >
@@ -38,12 +45,6 @@ export function Hero() {
               </svg>
             </a>
 
-            <a
-              href="https://hub.dacot.com.br"
-              className="inline-flex h-14 items-center border-b border-line px-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted transition-colors hover:border-copper/60 hover:text-fg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
-            >
-              Já sou cliente
-            </a>
           </div>
     </div>
       </div>
