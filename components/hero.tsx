@@ -25,7 +25,7 @@ export function Hero() {
 
             <a
               href="https://hub.dacot.com.br"
-              className="inline-flex h-14 items-center justify-center border border-line-strong bg-surface-2 px-6 font-mono text-[11px] uppercase tracking-[0.16em] text-fg transition-colors hover:border-fg/40 hover:bg-fg/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg"
+              className="inline-flex h-14 items-center justify-center bg-surface-2 px-6 font-mono text-[11px] uppercase tracking-[0.16em] text-fg transition-colors hover:bg-fg/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg"
             >
               Já sou cliente
             </a>

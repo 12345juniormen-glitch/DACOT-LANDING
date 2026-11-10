@@ -106,7 +106,7 @@ export function SiteHeader() {
 
             <a
               href="https://hub.dacot.com.br"
-              className="inline-flex min-h-10 shrink-0 items-center font-mono text-[10px] uppercase tracking-[0.08em] text-muted transition-colors hover:text-copper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
+              className="inline-flex min-h-10 shrink-0 items-center bg-surface-2 px-1 font-mono text-[10px] uppercase text-fg transition-colors hover:bg-fg/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg sm:px-4 sm:tracking-[0.08em]"
             >
               Já sou cliente
             </a>
