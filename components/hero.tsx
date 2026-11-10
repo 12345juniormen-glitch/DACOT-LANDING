@@ -37,6 +37,13 @@ export function Hero() {
                 <path d="M8 1v13M3 9l5 5 5-5" stroke="currentColor" strokeWidth="1.4" />
               </svg>
             </a>
+
+            <a
+              href="https://hub.dacot.com.br"
+              className="inline-flex h-14 items-center border-b border-line px-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted transition-colors hover:border-copper/60 hover:text-fg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
+            >
+              Já sou cliente
+            </a>
           </div>
     </div>
       </div>
